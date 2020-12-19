@@ -53,6 +53,8 @@ LABEL org.opencontainers.image.vendor="Light Code Labs"
 LABEL org.opencontainers.image.licenses=Apache-2.0
 LABEL org.opencontainers.image.source="https://github.com/caddyserver/caddy-docker"
 
+COPY Caddyfile /etc/caddy/Caddyfile
+
 EXPOSE 80
 EXPOSE 443
 EXPOSE 2019
