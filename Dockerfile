@@ -53,7 +53,10 @@ LABEL org.opencontainers.image.vendor="Light Code Labs"
 LABEL org.opencontainers.image.licenses=Apache-2.0
 LABEL org.opencontainers.image.source="https://github.com/caddyserver/caddy-docker"
 
-COPY Caddyfile /etc/caddy/Caddyfile
+RUN mkdir -p /var/www/html/
+RUN mkdir -p /usr/share/nginx/html/downloads/misc
+RUN ln -sf /mnt/drivex/html/downloads/misc /usr/share/nginx/html/downloads/misc
+RUN ln -sf /mnt/drivex/html/airsys.tk /var/www/html/airsys.tk
 
 EXPOSE 80
 EXPOSE 443
